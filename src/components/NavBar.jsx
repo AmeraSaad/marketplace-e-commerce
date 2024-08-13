@@ -1,6 +1,7 @@
 import React from 'react';
+import SearchBar from './SearchBar';
 
-const NavBar = ({isSidebarOpen,setIsSidebarOpen,toggleSidebar}) => {
+const NavBar = ({isSidebarOpen,setIsSidebarOpen,toggleSidebar,setSearchQuery}) => {
   return (
     <nav className="fixed top-0 w-full z-10 flex justify-between items-center p-4 bg-white shadow-md dark:bg-gray-800 dark:text-white">
        {/* Left side - Logo and Toggle button */}
@@ -79,13 +80,11 @@ const NavBar = ({isSidebarOpen,setIsSidebarOpen,toggleSidebar}) => {
           </div>
         </div>
       </div>
-       {/* Right side - Search, Settings, Cart */}
-      <div className="flex space-x-4 x-4">
-        <button className="p-2">
-        {/* <img src="./images/search.80230c5d.png" alt="" className='' /> */}
-          <i className="fas fa-search text-xl text-gray-500"></i>
-        </button>
-        <button className="p-2">
+      {/* Right side - Search, Settings, Cart */}
+      <div className="flex items-center space-x-4">
+        <SearchBar setSearchQuery={setSearchQuery}/>
+        {/* Settings and Cart Icons */}
+        <button className="">
           <i className="fas fa-cog text-xl text-gray-500"></i>
         </button>
         <button className="p-2 relative">

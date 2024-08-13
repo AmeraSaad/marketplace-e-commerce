@@ -11,6 +11,8 @@ const ProductSlider = ({ products }) => {
     speed: 100,
     slidesToShow: 4,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
     responsive: [
       {
         breakpoint: 1024,
@@ -28,8 +30,8 @@ const ProductSlider = ({ products }) => {
   };
 
   return (
-    <div className="product-slider pt-16">
-      <div className="mx-auto text-center pt-10 dark:bg-gray-800 dark:text-white">
+    <div className="product-slider pt-16 dark:bg-gray-800 dark:text-white">
+      <div className="mx-auto text-center pt-10 ">
       <h1 className="text-5xl mb-6"> Top Products</h1>
       <span className="block w-16 border-b-4 border-gray-600 mx-auto"></span>
       </div>

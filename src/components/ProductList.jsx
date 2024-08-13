@@ -13,8 +13,8 @@ function ProductList({products,setProducts}) {
   // }, []);
 
   return (
-    <div className='pt-16'>
-    <div className="mx-auto text-center pt-10 dark:bg-gray-800 dark:text-white">
+    <>
+    <div className="mx-auto text-center pt-20 dark:bg-gray-800 dark:text-white">
       <h1 className="text-5xl mb-6">
         Our Products
       </h1>
@@ -28,7 +28,7 @@ function ProductList({products,setProducts}) {
         </div>
       ))}
     </div>
-    </div>
+    </>
   );
 }
 

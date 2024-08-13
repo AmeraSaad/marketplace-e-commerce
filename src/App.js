@@ -12,6 +12,7 @@ import Slider from './components/Slider';
 function App() {
   const [products, setProducts] = useState([]);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
   const [theme, setTheme] = useState('light');
 
   const toggleTheme = () => {
@@ -29,15 +30,24 @@ function App() {
     .then((data) => setProducts(data.products));
   };
 
+  // Filter products based on search query
+  const filteredProducts = products.filter((product) =>
+    product.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+
   useEffect(() => {
     getAllProducts();
   }, []);
   
   return (
     <div className={theme}>
-    <NavBar isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} toggleSidebar={toggleSidebar}/>
+    <NavBar isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen}
+      toggleSidebar={toggleSidebar}
+      setSearchQuery={setSearchQuery}
+      />
     <Slider products={products.slice(0, 5)} />
-    <ProductList products={products} setProducts={setProducts}/>
+    <ProductList products={filteredProducts} setProducts={setProducts}/>
     <SideBar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} setProducts={setProducts} getAllProducts={getAllProducts}/>
     <RightIcons theme={theme} toggleTheme={toggleTheme}/>
     </div>
