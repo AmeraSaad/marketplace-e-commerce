@@ -11,10 +11,6 @@ This project is a React-based e-commerce product listing page. It features a res
 - **Product Slider**: A dynamic slider showcasing selected products with auto-scrolling and manual navigation.
 - **Interactive Product Cards**: Cards that reveal action buttons (Add to Cart, etc.) on hover.
 
-## Installation
-
-Follow these steps to get the project up and running locally.
-
 # Live Demo
 
 Check out the live demo of the project [here](https://marketplace-e-commerce-lfyiqaqrh-amerasaads-projects.vercel.app/).
