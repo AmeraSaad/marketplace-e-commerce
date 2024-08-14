@@ -1,6 +1,7 @@
 import React from 'react';
 import SearchBar from './SearchBar';
 
+
 const NavBar = ({isSidebarOpen,setIsSidebarOpen,toggleSidebar,setSearchQuery}) => {
   return (
     <nav className="fixed top-0 w-full z-10 flex justify-between items-center p-4 bg-white shadow-md dark:bg-gray-800 dark:text-white">
@@ -9,7 +10,7 @@ const NavBar = ({isSidebarOpen,setIsSidebarOpen,toggleSidebar,setSearchQuery}) =
         <button onClick={() => setIsSidebarOpen(!isSidebarOpen)} className="p-2 mx-8">
           {<i className="fas fa-bars text-2xl"></i> }
         </button>
-        <img src="logo.png" alt="Logo" className="h-8" />
+        <img src="./images/logo.png" alt="Logo" className="h-8" />
       </div>
 
       {/* Center - Dropdown lists */}
