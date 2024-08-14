@@ -36,7 +36,7 @@ function ProductList({products,setProducts}) {
     
     <ProductSorting setSortOption={setSortOption}/>
 
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 p-10 dark:bg-gray-800 dark:text-white">
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 p-10 dark:bg-gray-800 dark:text-white">
       {sortedProducts.map((product, index) => (
         <div className="relative rounded-lg group" key={index}>
           <Product product={product} />
