@@ -1,6 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { ProductsContext } from '../../../context/ProductsContext';
 
-function SideBar({isSidebarOpen,toggleSidebar,setProducts,getAllProducts}) {
+function SideBar({isSidebarOpen,toggleSidebar}) {
+  
+  const { setProducts,getAllProducts } = useContext(ProductsContext);
+
   const api_url = 'https://dummyjson.com/products';
   const [categories, setCategories] = useState([]);
 

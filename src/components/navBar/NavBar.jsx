@@ -1,8 +1,10 @@
 import React from 'react';
-import SearchBar from './SearchBar';
+import logo from '../../assets/images/logo.png'
+import SearchBar from './components/SearchBar';
+import Cart from './components/Cart';
 
 
-const NavBar = ({isSidebarOpen,setIsSidebarOpen,toggleSidebar,setSearchQuery}) => {
+const NavBar = ({isSidebarOpen,setIsSidebarOpen}) => {
   return (
     <nav className="fixed top-0 w-full z-10 flex justify-between items-center p-4 bg-white shadow-md dark:bg-gray-800 dark:text-white">
        {/* Left side - Logo and Toggle button */}
@@ -10,7 +12,7 @@ const NavBar = ({isSidebarOpen,setIsSidebarOpen,toggleSidebar,setSearchQuery}) =
         <button onClick={() => setIsSidebarOpen(!isSidebarOpen)} className="p-2 mx-8">
           {<i className="fas fa-bars text-2xl"></i> }
         </button>
-        <img src="./images/logo.png" alt="Logo" className="h-8" />
+        <img src={logo} alt="Logo" className="h-8" />
       </div>
 
       {/* Center - Dropdown lists */}
@@ -81,13 +83,12 @@ const NavBar = ({isSidebarOpen,setIsSidebarOpen,toggleSidebar,setSearchQuery}) =
           </div>
         </div>
       </div>
+
       {/* Right side - Search, Settings, Cart */}
       <div className="flex items-center space-x-4">
-        <SearchBar setSearchQuery={setSearchQuery}/>
+        <SearchBar/>
         {/* Settings and Cart Icons */}
-        <button className="">
-          <i className="fas fa-cog text-xl text-gray-500"></i>
-        </button>
+        <Cart/>
         <button className="p-2 relative">
           <i className="fas fa-shopping-cart text-xl text-gray-500"></i>
           <span className="absolute top-0 right-0 bg-gray-800 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>

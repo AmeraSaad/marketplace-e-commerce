@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import Product from './Product';
+import { ProductsContext } from '../../../context/ProductsContext';
 
-const ProductSlider = ({ products }) => {
+const ProductSlider = () => {
+  const {products} = useContext(ProductsContext);
+  const productsSlice =products.slice(0, 5)
+
   const settings = {
     dots: true,
     infinite: true,
@@ -36,7 +40,7 @@ const ProductSlider = ({ products }) => {
       <span className="block w-16 border-b-4 border-gray-600 mx-auto"></span>
       </div>
       <Slider {...settings} className='p-10'>
-        {products.map(product => (
+        {productsSlice.map(product => (
           <div key={product.id} className="px-20">
           <Product product={product} />
           </div>

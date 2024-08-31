@@ -1,20 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Product from './Product';
 import ProductSorting from './ProductSorting';
+import { ProductsContext } from '../../../context/ProductsContext';
 
-function ProductList({products,setProducts}) {
-  // const getProducts = () => {
-  //   fetch('https://dummyjson.com/products')
-  //   .then((res) => res.json())
-  //   .then((data) => setProducts(data.products));
-  // };
-
-  // useEffect(() => {
-  //   getProducts();
-  // }, []);
+function ProductList() {
+  const {filteredProducts} = useContext(ProductsContext);
   
   const [sortOption, setSortOption] = useState('');
-  const sortedProducts = [...products].sort((a, b) => {
+  const sortedProducts = [...filteredProducts].sort((a, b) => {
     if (sortOption === 'title') {
       return a.title.localeCompare(b.title);
     } else if (sortOption === 'price') {
@@ -26,7 +19,7 @@ function ProductList({products,setProducts}) {
   });
 
   return (
-    <>
+    <div>
     <div className="mx-auto text-center pt-20 dark:bg-gray-800 dark:text-white">
       <h1 className="text-5xl mb-6">
         Our Products
@@ -43,7 +36,7 @@ function ProductList({products,setProducts}) {
         </div>
       ))}
     </div>
-    </>
+    </div>
   );
 }
 
