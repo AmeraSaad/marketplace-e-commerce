@@ -1,15 +1,26 @@
 import './App.css';
 import './components/Styles.css';
-import ThemeProvider from './context/ThemeContext.jsx';
+import HomePage from './Pages/Home/HomePage.jsx';
+import MainLayout from './layouts/MainLayout.jsx'
 
-import Home from './Pages/Home/Home.jsx';
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
 
 function App() {
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path='/' element={<MainLayout />}>
+        <Route index element={<HomePage />} />
+      </Route>
+    )
+  );
 
   return (
-    <ThemeProvider>
-      <Home />
-    </ThemeProvider>
+    <RouterProvider router={router} />
   );
 }
 

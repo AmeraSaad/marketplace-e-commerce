@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from '../../assets/images/logo.png'
 import SearchBar from './components/SearchBar';
 import Cart from './components/Cart';
+import { ToggleSidebarContext } from '../../context/ToggleSidebarContext';
+import { ThemeContext } from '../../context/ThemeContext';
 
-
-const NavBar = ({isSidebarOpen,setIsSidebarOpen}) => {
+const NavBar = () => {
+  const { isSidebarOpen, setIsSidebarOpen } = useContext(ToggleSidebarContext);
+  const { theme } = useContext(ThemeContext); 
   return (
+    <header className={theme}> 
     <nav className="fixed top-0 w-full z-10 flex justify-between items-center p-4 bg-white shadow-md dark:bg-gray-800 dark:text-white">
        {/* Left side - Logo and Toggle button */}
       <div className="flex items-center">
@@ -95,6 +99,7 @@ const NavBar = ({isSidebarOpen,setIsSidebarOpen}) => {
         </button>
       </div>
     </nav>
+    </header>
   );
 };
 
