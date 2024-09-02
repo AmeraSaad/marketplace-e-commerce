@@ -4,6 +4,7 @@ import SearchBar from './components/SearchBar';
 import Cart from './components/Cart';
 import { ToggleSidebarContext } from '../../context/ToggleSidebarContext';
 import { ThemeContext } from '../../context/ThemeContext';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   const { isSidebarOpen, setIsSidebarOpen } = useContext(ToggleSidebarContext);
@@ -16,7 +17,9 @@ const NavBar = () => {
         <button onClick={() => setIsSidebarOpen(!isSidebarOpen)} className="p-2 mx-8">
           {<i className="fas fa-bars text-2xl"></i> }
         </button>
-        <img src={logo} alt="Logo" className="h-8" />
+        <Link to={'/'}>
+          <img src={logo} alt="Logo" className="h-8" />
+        </Link>
       </div>
 
       {/* Center - Dropdown lists */}
@@ -92,11 +95,10 @@ const NavBar = () => {
       <div className="flex items-center space-x-4">
         <SearchBar/>
         {/* Settings and Cart Icons */}
-        <Cart/>
-        <button className="p-2 relative">
-          <i className="fas fa-shopping-cart text-xl text-gray-500"></i>
-          <span className="absolute top-0 right-0 bg-gray-800 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+        <button className="">
+          <i to className="fas fa-cog text-xl text-gray-500"></i>
         </button>
+        <Cart/>
       </div>
     </nav>
     </header>

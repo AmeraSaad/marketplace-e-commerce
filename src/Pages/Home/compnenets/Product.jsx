@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 function Product({ product }) {
   const renderStars = () => {
@@ -32,9 +34,9 @@ function Product({ product }) {
           <button className="bg-white p-1 rounded-full transform translate-x-5 group-hover:translate-x-0 transition-all duration-500 delay-200">
             <i className="fas fa-search text-gray-400 hover:text-gray-600"></i>
           </button>
-          <button className="bg-white p-1 rounded-full transform translate-x-5 group-hover:translate-x-0 transition-all duration-500 delay-300">
+          <Link  to={`/productDetails/${product.id}`} className="bg-white p-1 rounded-full transform translate-x-5 group-hover:translate-x-0 transition-all duration-500 delay-300">
             <i className="fas fa-sync-alt text-gray-400 hover:text-gray-600"></i>
-          </button>
+          </Link>
         </div>
       </div>
 

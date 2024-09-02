@@ -19,8 +19,8 @@ function ProductList() {
   });
 
   return (
-    <div>
-    <div className="mx-auto text-center pt-20 dark:bg-gray-800 dark:text-white">
+    <>
+    <div className="mx-auto text-center dark:bg-gray-800 dark:text-white">
       <h1 className="text-5xl mb-6">
         Our Products
       </h1>
@@ -36,7 +36,7 @@ function ProductList() {
         </div>
       ))}
     </div>
-    </div>
+    </>
   );
 }
 
