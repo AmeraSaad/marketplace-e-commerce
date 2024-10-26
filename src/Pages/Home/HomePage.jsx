@@ -9,8 +9,8 @@ const Home = () => {
   const { theme } = useContext(ThemeContext); 
   
   return (
-      <main className={`${theme} `}>
-        <Slider />
+      <main className={`${theme} main-content`}>
+        {/* <Slider /> */}
         <ProductList />
         <SideBar />
       </main>
