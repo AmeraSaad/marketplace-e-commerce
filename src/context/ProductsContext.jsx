@@ -6,11 +6,16 @@ function ProductsProvider({ children }){
   const [products, setProducts] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
 
-  const getAllProducts = () => {
-    fetch('https://dummyjson.com/products')
-      .then((res) => res.json())
-      .then((data) => setProducts(data.products));
-  };
+  // const getAllProducts = () => {
+  //   fetch('https://dummyjson.com/products')
+  //     .then((res) => res.json())
+  //     .then((data) => setProducts(data.products));
+  // };
+   const getAllProducts = () => {
+     fetch("https://fakestoreapi.com/products")
+       .then((res) => res.json())
+       .then((data) => setProducts(data));
+   };
 
    // Filter products based on search query (by title or category)
   const filteredProducts = products.filter((product) =>
