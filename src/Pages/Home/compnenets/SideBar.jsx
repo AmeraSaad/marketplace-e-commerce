@@ -6,30 +6,30 @@ function SideBar() {
   const { isSidebarOpen, toggleSidebar } = useContext(ToggleSidebarContext);
   const { setProducts, getAllProducts } = useContext(ProductsContext);
   const [categories, setCategories] = useState([]);
-  // const api_url = 'https://dummyjson.com/products';
-  const api_url = "https://fakestoreapi.com";
+  const api_url = 'https://dummyjson.com/products';
+  // const api_url = "https://fakestoreapi.com";
 
-  // useEffect(() => {
-  //   fetch(`${api_url}/categories`)
-  //     .then((res) => res.json())
-  //     .then((data) => setCategories(data));
-  // }, []);
-    useEffect(() => {
-      fetch(`${api_url}/products/categories`)
-        .then((res) => res.json())
-        .then((data) => setCategories(data));
-    }, []);
+  useEffect(() => {
+    fetch(`${api_url}/categories`)
+      .then((res) => res.json())
+      .then((data) => setCategories(data));
+  }, []);
+    // useEffect(() => {
+    //   fetch(`${api_url}/products/categories`)
+    //     .then((res) => res.json())
+    //     .then((data) => setCategories(data));
+    // }, []);
 
-  // const getProductsInCategory = (catName) => {
-  //   fetch(`${api_url}/category/${catName}`)
-  //     .then((res) => res.json())
-  //     .then((data) => setProducts(data.products));
-  // };
-   const getProductsInCategory = (catName) => {
-     fetch(`${api_url}/products/category/${catName}`)
-       .then((res) => res.json())
-       .then((data) => setProducts(data));
-   };
+  const getProductsInCategory = (catName) => {
+    fetch(`${api_url}/category/${catName}`)
+      .then((res) => res.json())
+      .then((data) => setProducts(data.products));
+  };
+  //  const getProductsInCategory = (catName) => {
+  //    fetch(`${api_url}/products/category/${catName}`)
+  //      .then((res) => res.json())
+  //      .then((data) => setProducts(data));
+  //  };
 
 
   return (
@@ -54,13 +54,13 @@ function SideBar() {
               >
                 All
               </li>
-              {/* {categories.map((category) => (
+              {categories.map((category) => (
                 <li key={category} className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-900"
                     onClick={() => getProductsInCategory(category.name)}>
                   {category.name}
                 </li>
-              ))} */}
-              {categories.map((category) => (
+              ))}
+              {/* {categories.map((category) => (
                 <li
                   key={category}
                   className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-900"
@@ -68,7 +68,7 @@ function SideBar() {
                 >
                   {category}
                 </li>
-              ))}
+              ))} */}
             </ul>
           </div>
         </div>

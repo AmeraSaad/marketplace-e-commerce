@@ -20,7 +20,7 @@ function Product({ product }) {
     <>
       <div className="w-full h-56 relative overflow-hidden">
         <img
-          src={product.image}
+          src={product.thumbnail}
           alt={product.title}
           className="w-full h-full object-contain"
         />
