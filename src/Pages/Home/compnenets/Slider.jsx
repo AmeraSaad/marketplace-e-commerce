@@ -34,8 +34,8 @@ const ProductSlider = () => {
   };
 
   return (
-    <div className="product-slider pt-16 dark:bg-gray-800 dark:text-white">
-      <div className="mx-auto text-center pt-10 ">
+    <div className="product-slider  dark:bg-gray-800 dark:text-white">
+      <div className="mx-auto text-center pt-16 ">
       <h1 className="text-5xl mb-6"> Top Products</h1>
       <span className="block w-16 border-b-4 border-gray-600 mx-auto"></span>
       </div>

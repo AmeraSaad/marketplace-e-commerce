@@ -10,7 +10,7 @@ const Home = () => {
   
   return (
       <main className={`${theme} main-content`}>
-        {/* <Slider /> */}
+        <Slider />
         <ProductList />
         <SideBar />
       </main>
